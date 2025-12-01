@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EditSongController">
+
+    <!-- Padding -->
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <!-- Header -->
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Edit Song" />
+
+    <!-- Title -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label prefWidth="80" text="Title:" />
+        <TextField fx:id="txtTitle" HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <!-- Artist -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label prefWidth="80" text="Artist:" />
+        <TextField fx:id="txtArtist" HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <!-- Category -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label prefWidth="80" text="Category:" />
+        <TextField fx:id="txtCategory" HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <!-- Audio file -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label prefWidth="80" text="Audio:" />
+        <TextField fx:id="txtAudioPath" editable="false" HBox.hgrow="ALWAYS" />
+        <Button onAction="#btnBrowse" text="Browse..." />
+    </HBox>
+
+    <!-- Spacer -->
+    <Pane VBox.vgrow="ALWAYS" />
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER_RIGHT" spacing="15">
+        <Button fx:id="btnSave" onAction="#btnSave" text="Save" />
+        <Button fx:id ="btnCancel" onAction="#btnCancel" text="Cancel" />
+    </HBox>
+
+</VBox>

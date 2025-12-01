@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.NewSongController">
+
+    <children>
+        <Label layoutX="150" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Add New Song" />
+
+        <!-- Titel -->
+        <Label layoutX="50" layoutY="70" text="Title:" />
+        <TextField fx:id="txtTitle" layoutX="150" layoutY="65" prefWidth="200" />
+
+        <!-- Artist -->
+        <Label layoutX="50" layoutY="110" text="Artist:" />
+        <TextField fx:id="txtArtist" layoutX="150" layoutY="105" prefWidth="200" />
+
+        <!-- Category -->
+        <Label layoutX="50" layoutY="150" text="Category:" />
+        <TextField fx:id="txtCategory" layoutX="150" layoutY="145" prefWidth="200" />
+
+        <!-- File -->
+        <Label layoutX="50" layoutY="190" text="File:" />
+        <TextField fx:id="txtAudioFile" layoutX="150" layoutY="185" prefWidth="150" />
+        <Button fx:id="btnBrowse" layoutX="310" layoutY="185" onAction="#chooseFile" prefWidth="60" text="Browse" />
+
+        <!-- Add Button -->
+        <Button fx:id="btnAddSong" layoutX="150" layoutY="240" onAction="#addSong" prefWidth="100" text="Add Song" />
+    </children>
+</AnchorPane>
