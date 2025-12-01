@@ -1,37 +1,22 @@
-Here is the structure of my database.
+CREATE TABLE PlayList (
+    Name VARCHAR(25),
+    ID INT IDENTITY CONSTRAINT PlayList_pk PRIMARY KEY
+);
+GO
 
-create table PlayList
-(
-    Name varchar(25),
-    ID   int identity
-        constraint PlayList_pk
-            primary key
-)
-go
+CREATE TABLE Songs (
+    Title VARCHAR(100) NOT NULL,
+    Artist VARCHAR(100) NOT NULL,
+    Category VARCHAR(100) NOT NULL,
+    SongID INT IDENTITY CONSTRAINT SongID_pk PRIMARY KEY NONCLUSTERED,
+    AudioData VARBINARY(MAX),
+    DurationSeconds INT
+);
+GO
 
-create table Songs
-(
-    Title           varchar(100) not null,
-    Artist          varchar(100) not null,
-    category        varchar(100) not null,
-    SongID          int identity
-        constraint SongID_pk
-            primary key nonclustered,
-    AudioData       varbinary(max),
-    DurationSeconds int
-)
-go
-
-create table Playlist_Songs
-(
-    playlist_id int not null
-        constraint Playlist_Songs_PlayList_ID_fk
-            references PlayList,
-    song_id     int not null
-        constraint Playlist_Songs_Songs_SongID_fk
-            references Songs,
-    constraint PK_Playlist_Songs
-        primary key (playlist_id, song_id)
-)
-go
-
+CREATE TABLE Playlist_Songs (
+    playlist_id INT NOT NULL CONSTRAINT Playlist_Songs_PlayList_ID_fk REFERENCES PlayList,
+    song_id INT NOT NULL CONSTRAINT Playlist_Songs_Songs_SongID_fk REFERENCES Songs,
+    CONSTRAINT PK_Playlist_Songs PRIMARY KEY (playlist_id, song_id)
+);
+GO
